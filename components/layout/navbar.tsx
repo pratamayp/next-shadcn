@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils';
 import { MobileSidebar } from './mobile-sidebar';
+import { ThemeToggle } from './theme-toggle';
 
 export const Navbar = () => {
   return (
@@ -7,6 +8,10 @@ export const Navbar = () => {
       <nav className="flex h-16 items-center justify-between px-4">
         <div className={cn('block md:!hidden')}>
           <MobileSidebar />
+        </div>
+        <div>Title</div>
+        <div>
+          <ThemeToggle />
         </div>
       </nav>
     </div>
