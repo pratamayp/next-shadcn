@@ -46,7 +46,7 @@ export const SideNav = ({ items, setOpen, className }: SideNavProps) => {
             value={openItem}
             onValueChange={setOpenItem}
           >
-            <AccordionItem value={item.title} className="border-none ">
+            <AccordionItem value={item.title} className="border-none">
               <AccordionTrigger
                 className={cn(
                   buttonVariants({ variant: 'ghost' }),
@@ -54,10 +54,10 @@ export const SideNav = ({ items, setOpen, className }: SideNavProps) => {
                 )}
                 noChevron
               >
-                <Icon className="mr-2 h-4 w-4" />
+                <Icon className="mr-2 size-4" />
                 <div
                   className={cn(
-                    'absolute left-12 text-base duration-200 ',
+                    'absolute left-12 text-base duration-200',
                     !isOpen && className,
                   )}
                 >
@@ -65,7 +65,7 @@ export const SideNav = ({ items, setOpen, className }: SideNavProps) => {
                 </div>
 
                 {isOpen && (
-                  <ChevronDownIcon className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200" />
+                  <ChevronDownIcon className="size-4 shrink-0 text-muted-foreground transition-transform duration-200" />
                 )}
               </AccordionTrigger>
               <AccordionContent className="mt-2 space-y-4 pb-1">
@@ -83,7 +83,7 @@ export const SideNav = ({ items, setOpen, className }: SideNavProps) => {
                         'bg-muted font-bold hover:bg-muted',
                     )}
                   >
-                    <Icon className="mr-2 h-4 w-4" />
+                    <Icon className="mr-2 size-4" />
                     <div
                       className={cn(
                         'absolute left-12 text-base duration-200',
@@ -110,7 +110,7 @@ export const SideNav = ({ items, setOpen, className }: SideNavProps) => {
               path === item.href && 'bg-muted font-bold hover:bg-muted',
             )}
           >
-            <Icon className="mr-2 h-4 w-4" />
+            <Icon className="mr-2 size-4" />
             <span
               className={cn(
                 'absolute left-12 text-base duration-200',

@@ -10,7 +10,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
   return (
     <aside
       className={cn(
-        `relative hidden h-screen border-r pt-16 md:block w-72`,
+        `relative hidden h-screen w-72 border-r pt-16 md:block`,
         // status && 'duration-500',
         // isOpen ? 'w-72' : 'w-[78px]',
         className,
