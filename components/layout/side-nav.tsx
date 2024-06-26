@@ -14,6 +14,8 @@ import { NavItem } from '@/types';
 import { useState } from 'react';
 import { useSidebar } from '@/hooks/useSidebar';
 import { usePathname } from 'next/navigation';
+import { Helpdesk } from '../icons';
+import { Icons } from '../icons/sidebar';
 
 interface SideNavProps {
   items: NavItem[];
@@ -30,8 +32,12 @@ export const SideNav = ({ items, setOpen, className }: SideNavProps) => {
 
   return (
     <nav className="space-y-2">
-      {items.map((item) =>
-        item.isChidren ? (
+      {/* {items.map((item) =>
+
+      )} */}
+      {items.map((item) => {
+        const Icon = Icons[item.icon || 'arrowRight'];
+        return item.isChidren ? (
           <Accordion
             type="single"
             collapsible
@@ -48,9 +54,7 @@ export const SideNav = ({ items, setOpen, className }: SideNavProps) => {
                 )}
                 noChevron
               >
-                <div>
-                  <item.icon className={cn('h-5 w-5', item.color)} />
-                </div>
+                <Icon className="mr-2 h-4 w-4" />
                 <div
                   className={cn(
                     'absolute left-12 text-base duration-200 ',
@@ -79,7 +83,7 @@ export const SideNav = ({ items, setOpen, className }: SideNavProps) => {
                         'bg-muted font-bold hover:bg-muted',
                     )}
                   >
-                    <child.icon className={cn('h-5 w-5', child.color)} />
+                    <Icon className="mr-2 h-4 w-4" />
                     <div
                       className={cn(
                         'absolute left-12 text-base duration-200',
@@ -106,7 +110,7 @@ export const SideNav = ({ items, setOpen, className }: SideNavProps) => {
               path === item.href && 'bg-muted font-bold hover:bg-muted',
             )}
           >
-            <item.icon className={cn('h-5 w-5', item.color)} />
+            <Icon className="mr-2 h-4 w-4" />
             <span
               className={cn(
                 'absolute left-12 text-base duration-200',
@@ -116,8 +120,8 @@ export const SideNav = ({ items, setOpen, className }: SideNavProps) => {
               {item.title}
             </span>
           </Link>
-        ),
-      )}
+        );
+      })}
     </nav>
   );
 };

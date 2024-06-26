@@ -4,21 +4,18 @@ import { type NavItem } from '@/types';
 export const items: NavItem[] = [
   {
     title: 'Dashboard',
-    icon: 'LayoutDashboard',
+    icon: 'dashboard',
     href: '/',
-    color: 'text-sky-500',
   },
   {
     title: 'Example',
-    icon: 'BookOpenCheck',
+    icon: 'dashboard',
     href: '/example',
-    color: 'text-orange-500',
     isChidren: true,
     children: [
       {
         title: 'Example-01',
-        icon: 'BookOpenCheck',
-        color: 'text-red-500',
+        icon: 'dashboard',
         href: '/example/employees',
       },
     ],
