@@ -1,4 +1,3 @@
-import { BookOpenCheck, LayoutDashboard } from 'lucide-react';
 import { type NavItem } from '@/types';
 
 export const items: NavItem[] = [
