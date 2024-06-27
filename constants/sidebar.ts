@@ -7,6 +7,11 @@ export const items: NavItem[] = [
     href: '/',
   },
   {
+    title: 'Table',
+    icon: 'dashboard',
+    href: '/table',
+  },
+  {
     title: 'Example',
     icon: 'dashboard',
     href: '/example',
