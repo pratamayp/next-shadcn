@@ -30,13 +30,21 @@ export function DashboardForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <InputField
-          form={form}
-          name="username"
-          label="Username"
-          placeholder="shadcn"
-        />
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <div className="space-y-2">
+          <InputField
+            form={form}
+            name="username"
+            label="Username"
+            placeholder="shadcn"
+          />
+          <InputField
+            form={form}
+            name="username"
+            label="Username"
+            placeholder="shadcn"
+          />
+        </div>
         <Button type="submit">Submit</Button>
       </form>
     </Form>
