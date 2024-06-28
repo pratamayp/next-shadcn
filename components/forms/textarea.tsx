@@ -1,6 +1,5 @@
-import React from 'react';
-import { Label } from '../ui/label';
-import { Textarea } from '../ui/textarea';
+import { InputFieldProps } from '@/types/field';
+
 import {
   FormControl,
   FormDescription,
@@ -9,7 +8,7 @@ import {
   FormLabel,
   FormMessage,
 } from '../ui/form';
-import { InputFieldProps } from '@/types/field';
+import { Textarea } from '../ui/textarea';
 
 export const TextareaField = ({
   form,

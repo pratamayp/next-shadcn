@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { InputFieldProps } from '@/types/field';
+
 import {
   FormControl,
   FormDescription,
@@ -8,7 +11,6 @@ import {
   FormMessage,
 } from '../ui/form';
 import { Input } from '../ui/input';
-import { InputFieldProps } from '@/types/field';
 
 export const InputField = ({
   form,

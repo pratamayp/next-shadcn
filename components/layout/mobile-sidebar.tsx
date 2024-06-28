@@ -1,10 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '../ui/sheet';
 import { MenuIcon } from 'lucide-react';
-import { SideNav } from './side-nav';
+import { useEffect, useState } from 'react';
+
 import { items } from '@/constants/sidebar';
+
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '../ui/sheet';
+import { SideNav } from './side-nav';
 
 export const MobileSidebar = () => {
   const [open, setOpen] = useState(false);

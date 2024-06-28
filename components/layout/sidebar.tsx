@@ -1,6 +1,7 @@
-import { cn } from '@/lib/utils';
-import { SideNav } from './side-nav';
 import { items } from '@/constants/sidebar';
+import { cn } from '@/lib/utils';
+
+import { SideNav } from './side-nav';
 
 interface SidebarProps {
   className?: string;

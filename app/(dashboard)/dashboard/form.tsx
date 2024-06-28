@@ -4,9 +4,9 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+import { InputField, TextareaField } from '@/components/forms';
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
-import { InputField, TextareaField } from '@/components/forms';
 
 const formSchema = z.object({
   username: z.string().min(1, 'Field is required'),

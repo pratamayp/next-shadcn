@@ -1,21 +1,23 @@
 'use client';
 
 import { ChevronDownIcon } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useState } from 'react';
+
+import { useSidebar } from '@/hooks/useSidebar';
+import { cn } from '@/lib/utils';
+import { NavItem } from '@/types';
+
+import { Helpdesk } from '../icons';
+import { Icons } from '../icons/sidebar';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '../ui/accordion';
-import Link from 'next/link';
 import { buttonVariants } from '../ui/button';
-import { cn } from '@/lib/utils';
-import { NavItem } from '@/types';
-import { useState } from 'react';
-import { useSidebar } from '@/hooks/useSidebar';
-import { usePathname } from 'next/navigation';
-import { Helpdesk } from '../icons';
-import { Icons } from '../icons/sidebar';
 
 interface SideNavProps {
   items: NavItem[];
