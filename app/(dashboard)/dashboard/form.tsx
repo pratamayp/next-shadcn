@@ -6,10 +6,11 @@ import { z } from 'zod';
 
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
-import { InputField } from '@/components/forms';
+import { InputField, TextareaField } from '@/components/forms';
 
 const formSchema = z.object({
-  username: z.string().min(2).max(50),
+  username: z.string().min(1, 'Field is required'),
+  address: z.string().min(1, 'Field is required'),
 });
 
 export function DashboardForm() {
@@ -18,6 +19,7 @@ export function DashboardForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: '',
+      address: '',
     },
   });
 
@@ -36,13 +38,13 @@ export function DashboardForm() {
             form={form}
             name="username"
             label="Username"
-            placeholder="shadcn"
+            placeholder="input"
           />
-          <InputField
+          <TextareaField
             form={form}
-            name="username"
-            label="Username"
-            placeholder="shadcn"
+            name="address"
+            label="Address"
+            placeholder="textarea"
           />
         </div>
         <Button type="submit">Submit</Button>

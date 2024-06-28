@@ -1,4 +1,6 @@
 import React from 'react';
+import { Label } from '../ui/label';
+import { Textarea } from '../ui/textarea';
 import {
   FormControl,
   FormDescription,
@@ -7,14 +9,12 @@ import {
   FormLabel,
   FormMessage,
 } from '../ui/form';
-import { Input } from '../ui/input';
 import { InputFieldProps } from '@/types/field';
 
-export const InputField = ({
+export const TextareaField = ({
   form,
   name,
   label,
-  type,
   placeholder,
   desc,
 }: InputFieldProps) => {
@@ -26,7 +26,11 @@ export const InputField = ({
         <FormItem>
           <FormLabel>{label}</FormLabel>
           <FormControl>
-            <Input type={type ?? 'text'} placeholder={placeholder} {...field} />
+            <Textarea
+              placeholder={placeholder}
+              className="resize-none"
+              {...field}
+            />
           </FormControl>
           {desc && <FormDescription>{desc}</FormDescription>}
           <FormMessage />
