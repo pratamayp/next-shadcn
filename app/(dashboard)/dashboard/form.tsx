@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-import { InputField, TextareaField } from '@/components/forms';
+import { CheckboxField, InputField, TextareaField } from '@/components/forms';
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
 
@@ -51,6 +51,11 @@ export function DashboardForm() {
             fieldProps={{
               disabled: true,
             }}
+          />
+          <CheckboxField
+            form={form}
+            name="accept"
+            label="I Accept Terms and Condition"
           />
         </div>
         <Button type="submit">Submit</Button>
