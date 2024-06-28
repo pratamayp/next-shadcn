@@ -4,13 +4,20 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-import { CheckboxField, InputField, TextareaField } from '@/components/forms';
+import {
+  CheckboxField,
+  InputField,
+  RadioField,
+  TextareaField,
+} from '@/components/forms';
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
 
 const formSchema = z.object({
   username: z.string().min(1, 'Field is required'),
   address: z.string().min(1, 'Field is required'),
+  accept: z.boolean(),
+  gender: z.enum(['M', 'F']),
 });
 
 export function DashboardForm() {
@@ -20,6 +27,8 @@ export function DashboardForm() {
     defaultValues: {
       username: '',
       address: '',
+      accept: false,
+      gender: 'M',
     },
   });
 
@@ -39,23 +48,34 @@ export function DashboardForm() {
             name="username"
             label="Username"
             placeholder="input"
-            fieldProps={{
-              disabled: true,
-            }}
           />
           <TextareaField
             form={form}
             name="address"
             label="Address"
             placeholder="textarea"
-            fieldProps={{
-              disabled: true,
-            }}
           />
           <CheckboxField
             form={form}
             name="accept"
             label="I Accept Terms and Condition"
+          />
+          <RadioField
+            form={form}
+            name="gender"
+            label="Gender"
+            options={[
+              {
+                id: 1,
+                value: 'M',
+                label: 'Male',
+              },
+              {
+                id: 2,
+                value: 'F',
+                label: 'Female',
+              },
+            ]}
           />
         </div>
         <Button type="submit">Submit</Button>

@@ -1,11 +1,25 @@
 import { FieldValues } from 'react-hook-form';
 
-export interface FieldProps<T extends React.ElementType> {
+interface FormProps {
   form: FieldValues;
   name: string;
+}
+
+interface RadioItemProps {
+  id: number;
+  value: string;
+  label: string;
+}
+
+export interface FieldProps<T extends React.ElementType> extends FormProps {
   label?: string;
   type?: React.HTMLInputTypeAttribute;
   placeholder?: string;
   desc?: string;
   fieldProps?: React.ComponentProps<T>;
+}
+
+export interface RadioFieldProps extends FormProps {
+  label?: string;
+  options: RadioItemProps[];
 }
