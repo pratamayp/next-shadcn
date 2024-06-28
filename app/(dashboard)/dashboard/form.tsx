@@ -39,12 +39,18 @@ export function DashboardForm() {
             name="username"
             label="Username"
             placeholder="input"
+            fieldProps={{
+              disabled: true,
+            }}
           />
           <TextareaField
             form={form}
             name="address"
             label="Address"
             placeholder="textarea"
+            fieldProps={{
+              disabled: true,
+            }}
           />
         </div>
         <Button type="submit">Submit</Button>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { InputFieldProps } from '@/types/field';
+import { FieldProps } from '@/types/field';
 
 import {
   FormControl,
@@ -19,7 +19,8 @@ export const InputField = ({
   type,
   placeholder,
   desc,
-}: InputFieldProps) => {
+  fieldProps,
+}: FieldProps<typeof Input>) => {
   return (
     <FormField
       control={form.control}
@@ -28,7 +29,12 @@ export const InputField = ({
         <FormItem>
           <FormLabel>{label}</FormLabel>
           <FormControl>
-            <Input type={type ?? 'text'} placeholder={placeholder} {...field} />
+            <Input
+              type={type ?? 'text'}
+              placeholder={placeholder}
+              {...field}
+              {...fieldProps}
+            />
           </FormControl>
           {desc && <FormDescription>{desc}</FormDescription>}
           <FormMessage />

@@ -1,4 +1,4 @@
-import { InputFieldProps } from '@/types/field';
+import { FieldProps } from '@/types/field';
 
 import {
   FormControl,
@@ -16,7 +16,8 @@ export const TextareaField = ({
   label,
   placeholder,
   desc,
-}: InputFieldProps) => {
+  fieldProps,
+}: FieldProps<typeof Textarea>) => {
   return (
     <FormField
       control={form.control}
@@ -29,6 +30,7 @@ export const TextareaField = ({
               placeholder={placeholder}
               className="resize-none"
               {...field}
+              {...fieldProps}
             />
           </FormControl>
           {desc && <FormDescription>{desc}</FormDescription>}
