@@ -11,7 +11,7 @@ interface RadioItemProps {
   label: string;
 }
 
-interface SelectProps {
+interface SelectValueProps {
   label: string;
   value: string;
 }
@@ -31,9 +31,16 @@ export interface RadioFieldProps extends FormProps {
 export interface ComboBoxProps extends FormProps {
   label?: string;
   desc?: string;
-  options: SelectProps[];
+  options: SelectValueProps[];
   placeholder?: string;
   searchPlaceholder?: string;
   triggerClassName?: string;
   popoverClassName?: string;
+}
+
+export interface SelectProps extends FormProps {
+  label: string;
+  placeholder?: string;
+  desc?: string;
+  options: SelectValueProps[];
 }

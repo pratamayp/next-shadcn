@@ -9,6 +9,7 @@ import {
   ComboboxField,
   InputField,
   RadioField,
+  SelectField,
   TextareaField,
 } from '@/components/forms';
 import { Button } from '@/components/ui/button';
@@ -18,6 +19,7 @@ const formSchema = z.object({
   username: z.string().min(1, 'Field is required'),
   address: z.string().min(1, 'Field is required'),
   framework: z.string().min(1, 'Field is required'),
+  features: z.string().min(1, 'Field is required'),
   accept: z.boolean(),
   gender: z.enum(['M', 'F']),
 });
@@ -30,6 +32,7 @@ export function DashboardForm() {
       username: '',
       address: '',
       framework: '',
+      features: '',
       accept: false,
       gender: 'M',
     },
@@ -72,7 +75,21 @@ export function DashboardForm() {
                 label: 'SvelteKit',
               },
             ]}
-            triggerClassName="w-[300px]"
+          />
+          <SelectField
+            form={form}
+            name="features"
+            label="Features"
+            options={[
+              {
+                value: 'next.js',
+                label: 'Next.js',
+              },
+              {
+                value: 'sveltekit',
+                label: 'SvelteKit',
+              },
+            ]}
           />
           <CheckboxField
             form={form}

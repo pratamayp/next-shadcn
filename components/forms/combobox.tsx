@@ -84,6 +84,7 @@ export const ComboboxField = ({
                               name,
                               currentValue === item.value ? '' : item.value,
                             );
+                            form.clearErrors(name);
                             setOpen(false);
                           }}
                         >
