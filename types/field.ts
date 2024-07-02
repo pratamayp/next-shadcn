@@ -11,6 +11,10 @@ interface RadioItemProps {
   label: string;
 }
 
+interface SelectProps {
+  label: string;
+  value: string;
+}
 export interface FieldProps<T extends React.ElementType> extends FormProps {
   label?: string;
   type?: React.HTMLInputTypeAttribute;
@@ -22,4 +26,14 @@ export interface FieldProps<T extends React.ElementType> extends FormProps {
 export interface RadioFieldProps extends FormProps {
   label?: string;
   options: RadioItemProps[];
+}
+
+export interface ComboBoxProps extends FormProps {
+  label?: string;
+  desc?: string;
+  options: SelectProps[];
+  placeholder?: string;
+  searchPlaceholder?: string;
+  triggerClassName?: string;
+  popoverClassName?: string;
 }
