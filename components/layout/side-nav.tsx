@@ -9,7 +9,6 @@ import { useSidebar } from '@/hooks/useSidebar';
 import { cn } from '@/lib/utils';
 import { NavItem } from '@/types';
 
-import { Helpdesk } from '../icons';
 import { Icons } from '../icons/sidebar';
 import {
   Accordion,
@@ -30,7 +29,6 @@ export const SideNav = ({ items, setOpen, className }: SideNavProps) => {
   const { isOpen } = useSidebar();
 
   const [openItem, setOpenItem] = useState('');
-  const [lastOpenItem, setLastOpenItem] = useState('');
 
   return (
     <nav className="space-y-2">
