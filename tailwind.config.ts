@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      borderWidth: {
+        'with-gap': '2px',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

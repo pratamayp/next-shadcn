@@ -13,6 +13,7 @@ import {
   TextareaField,
 } from '@/components/forms';
 import { Button } from '@/components/ui/button';
+import MyDropzone from '@/components/ui/file-upload';
 import { Form } from '@/components/ui/form';
 
 const formSchema = z.object({
@@ -48,7 +49,13 @@ export function DashboardForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <div className="space-y-2">
+        <div className="space-y-2 p-4">
+          <MyDropzone
+            limit={2}
+            accept={{
+              'image/*': ['.png', '.jpeg', '.jpg', '.webp'],
+            }}
+          />
           <InputField
             form={form}
             name="username"

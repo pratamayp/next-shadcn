@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
-import { useSidebar } from '@/hooks/useSidebar';
+import { useSidebar } from '@/hooks/use-sidebar';
 import { cn } from '@/lib/utils';
 import { NavItem } from '@/types';
 
