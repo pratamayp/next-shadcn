@@ -44,3 +44,5 @@ export interface SelectProps extends FormProps {
   desc?: string;
   options: SelectValueProps[];
 }
+
+export interface FileUploadProps extends FormProps {}

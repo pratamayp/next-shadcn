@@ -7,13 +7,13 @@ import { z } from 'zod';
 import {
   CheckboxField,
   ComboboxField,
+  FileUploadField,
   InputField,
   RadioField,
   SelectField,
   TextareaField,
 } from '@/components/forms';
 import { Button } from '@/components/ui/button';
-import MyDropzone from '@/components/ui/file-upload';
 import { Form } from '@/components/ui/form';
 
 const formSchema = z.object({
@@ -23,10 +23,10 @@ const formSchema = z.object({
   features: z.string().min(1, 'Field is required'),
   accept: z.boolean(),
   gender: z.enum(['M', 'F']),
+  images: z.array(z.string()).min(1),
 });
 
 export function DashboardForm() {
-  // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -36,13 +36,12 @@ export function DashboardForm() {
       features: '',
       accept: false,
       gender: 'M',
+      images: [],
     },
   });
 
-  // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
+    // eslint-disable-next-line no-console
     console.log(values);
   }
 
@@ -50,12 +49,9 @@ export function DashboardForm() {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <div className="space-y-2 p-4">
-          <MyDropzone
-            limit={2}
-            accept={{
-              'image/*': ['.png', '.jpeg', '.jpg', '.webp'],
-            }}
-          />
+          <div>
+            <FileUploadField form={form} name="images" />
+          </div>
           <InputField
             form={form}
             name="username"
