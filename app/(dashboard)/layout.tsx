@@ -1,5 +1,10 @@
+'use client';
+
+import { ApolloProvider } from '@apollo/client';
+
 import { Navbar, Sidebar } from '@/components/layout';
 import { Toaster } from '@/components/ui/toaster';
+import client from '@/lib/apollo-client';
 
 const AdminLayout = ({
   children,
@@ -7,7 +12,7 @@ const AdminLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <>
+    <ApolloProvider client={client}>
       <Navbar />
       <Toaster />
       <div className="flex h-screen border-collapse overflow-hidden">
@@ -16,7 +21,7 @@ const AdminLayout = ({
           {children}
         </main>
       </div>
-    </>
+    </ApolloProvider>
   );
 };
 

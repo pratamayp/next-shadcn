@@ -8,3 +8,9 @@ export interface NavItem {
   isChidren?: boolean;
   children?: NavItem[];
 }
+
+export interface BaseResponse {
+  page: number;
+  total: number;
+  totalPage: number;
+}
