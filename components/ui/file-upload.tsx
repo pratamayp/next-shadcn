@@ -76,9 +76,14 @@ function FileUpload({ accept, maxFiles = 1, maxSize = 2 }: FileUploadProps) {
       {files.length > 0 && (
         <div className="flex items-end justify-between py-2">
           <div className="text-base font-semibold">File accepted</div>
-          <Button type="button" variant="outline" className="rounded-md">
+          <Button
+            type="button"
+            variant="outline"
+            className="rounded-md text-xs"
+            size="sm"
+          >
             Upload files
-            <CloudUpload className="ml-2 size-5" />
+            <CloudUpload className="ml-2 size-4" />
           </Button>
         </div>
       )}
