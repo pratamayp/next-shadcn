@@ -24,15 +24,18 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import { PaginationInput } from '@/types';
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
+  pagination: PaginationInput;
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
+  pagination,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -53,11 +56,17 @@ export function DataTable<TData, TValue>({
     getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
     onRowSelectionChange: setRowSelection,
+    manualPagination: true,
+    pageCount: pagination.totalPage,
     state: {
       sorting,
       columnFilters,
       columnVisibility,
       rowSelection,
+      pagination: {
+        pageIndex: pagination.pageIndex,
+        pageSize: pagination.pageSize,
+      },
     },
   });
 
@@ -125,7 +134,7 @@ export function DataTable<TData, TValue>({
         </Table>
       </div>
       <div className="py-4">
-        <DataTablePagination table={table} />
+        <DataTablePagination table={table} pagination={pagination} />
       </div>
     </div>
   );

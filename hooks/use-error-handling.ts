@@ -1,12 +1,18 @@
 import { ApolloError } from '@apollo/client';
 
+import { useToast } from '@/components/ui/use-toast';
+
 const useErrorHandling = () => {
+  const { toast } = useToast();
+
   return {
     onError: (err: ApolloError) => {
-      // eslint-disable-next-line no-console
-      console.log(err.message);
       // CHECK FOR UNAUTHORIZED HERE
-      // TOAST HERE
+      toast({
+        variant: 'destructive',
+        title: 'Something went wrong.',
+        description: err.message,
+      });
     },
   };
 };
